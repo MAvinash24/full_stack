@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import KaTeX styles for math formulas */
+@import "katex/dist/katex.min.css";
+
+body {
+  @apply bg-brand-bg text-white transition-colors duration-300;
+}
+
+/* Dark Mode / Light Mode defaults */
+:root {
+  --foreground-rgb: 255, 255, 255;
+}
+.dark body {
+  @apply bg-brand-bg text-white;
+}
+.light body {
+  @apply bg-[#f0fdf4] text-gray-900; /* Mint green from screenshot */
+}
+
+/* Custom Slider Styling */
+input[type=range] {
+  @apply w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  @apply w-4 h-4 bg-brand-accent rounded-full appearance-none transition-transform hover:scale-110;
+}
